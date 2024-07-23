@@ -1,0 +1,57 @@
+{% load static %}
+
+<footer class="footer pt-6 pb-5 bg-primary text-white">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-4">
+              <img class="navbar-brand-dark mb-4" height="35" src="{% static 'assets/img/favicon/android-chrome-192x192.png' %}"
+                  alt="Logo light">
+              <p>The Future of Education is here </p>
+              <ul class="social-buttons mb-5 mb-lg-0">
+                  <li>
+                      <a href="https://twitter.com/YRAdxm" aria-label="twitter social link"
+                          class="icon-white me-2">
+                          <span class="fab fa-twitter"></span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="https://www.facebook.com/" class="icon-white me-2"
+                          aria-label="facebook social link">
+                          <span class="fab fa-facebook"></span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="https://github.com/AdamLinYuan" aria-label="github social link" class="icon-white me-2">
+                          <span class="fab fa-github"></span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="https://dribbble.com" class="icon-white" aria-label="dribbble social link">
+                          <span class="fab fa-dribbble"></span>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+          <div class="col-6 col-md-2 mb-5 mb-lg-0">
+              <span class="h5">Study Smart Tutors</span>
+              <ul class="footer-links mt-2">
+                  <li><a target="_blank" href="{% url 'about-us' %}">About Us</a></li>
+                  <li><a target="_blank" href="{% url 'contact-us' %}">Contact Us</a></li>
+              </ul>
+          </div>
+      </div>
+      <hr class="bg-secondary my-3 my-lg-5">
+      <div class="row">
+          <div class="col mb-md-0">
+              <a href="https://themesberg.com" target="_blank" class="d-flex justify-content-center mb-3">
+                  <img src="{% static 'assets/img/favicon/android-chrome-192x192.png' %}" height="30" class="me-2" alt="Themesberg Logo">
+                  <p class="text-white fw-bold footer-logo-text m-0">Study Smart Tutors</p>
+              </a>
+              <div class="d-flex text-center justify-content-center align-items-center" role="contentinfo">
+                  <p class="fw-normal font-small mb-0">
+                    &copy; Study Smart Tutors - Coded by Adam Yuan.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>

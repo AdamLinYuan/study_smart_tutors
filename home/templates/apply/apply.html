@@ -1,0 +1,78 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+    <main>
+        
+        <!-- Hero -->
+        <div class="section-header pb-6 bg-primary text-white">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 text-center">
+                        <h1 class="display-3 mb-4">Apply to our tutoring and notes today!</h1>
+                        <p class="lead mb-5">[Description]</p>
+                        {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- End of Hero -->
+        
+        <!-- Application Form -->
+        <div class="section section-md pt-4">
+            <div class="container">
+                <div class="row mb-4 mb-lg-5">
+                    <div class="col-lg-6 col-sm-8">
+                        <h2 class="h5">Tutoring Application Form</h2>
+                        <!-- Form -->
+                        <form method="post">
+                            {% csrf_token %}
+                            <!-- Tutoring Package Selection -->
+                            <div class="mb-3">
+                                <label for="{{ form.tutoring_package.id_for_label }}">Tutoring Package</label>
+                                {{ form.tutoring_package }}
+                                <small class="form-text text-muted">{{ form.tutoring_package.help_text }}</small>
+                            </div>
+
+                            <!-- Service Description -->
+                            <div class="mb-3">
+                                <label for="{{ form.service_description.id_for_label }}">Service Description</label><br>
+                                {{ form.service_description }}
+                                <small class="form-text text-muted">{{ form.service_description.help_text }}</small>
+                            </div>
+
+                            <!-- Customer Details Inputs -->
+                            <div class="mb-3">
+                                <label for="{{ form.customer_name.id_for_label }}">Name</label>
+                                {{ form.customer_name }}
+                                <small class="form-text text-muted">{{ form.customer_name.help_text }}</small>
+                            </div>
+                            <div class="mb-3">
+                                <label for="{{ form.customer_email.id_for_label }}">Email</label>
+                                {{ form.customer_email }}
+                                <small class="form-text text-muted">{{ form.customer_email.help_text }}</small>
+                            </div>
+                            <div class="mb-3">
+                                <label for="{{ form.customer_phone.id_for_label }}">Phone</label>
+                                {{ form.customer_phone }}
+                                <small class="form-text text-muted">{{ form.customer_phone.help_text }}</small>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                        <!-- End of Form -->
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- End of Application Form -->
+    </main>
+{% endblock content %}

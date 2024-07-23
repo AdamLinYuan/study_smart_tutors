@@ -1,0 +1,87 @@
+{% load static %}
+
+<header class="header-global">
+
+    {% if request.path == "/landing-freelancer/" or request.path == "/blank/" %}
+    <nav id="navbar-main" aria-label="Primary navigation" class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-light navbar-theme-secondary">
+    {% else %}
+    <nav id="navbar-main" aria-label="Primary navigation" class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-dark navbar-theme-secondary">
+    {% endif %}  
+      <div class="container position-relative">
+          <a class="navbar-brand me-lg-5" href="/">
+              <img class="navbar-brand-dark" src="{% static 'assets/img/favicon/android-chrome-192x192.png' %}" alt="Logo light">
+              <img class="navbar-brand-light" src="{% static 'assets/img/favicon/android-chrome-192x192.png' %}" alt="Logo dark">
+          </a>
+
+            <!-- Add the navbar-toggler button here -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+          <div class="navbar-collapse collapse me-auto" id="navbar_global">
+              <div class="navbar-collapse-header">
+                  <div class="row">
+                      <div class="col-6 collapse-brand">
+                          <a href="/">
+                              <img src="{% static 'assets/img/favicon/android-chrome-192x192.png' %}" alt="Themesberg logo">
+                          </a>
+                      </div>
+                      <div class="col-6 collapse-close">
+                          <a href="#navbar_global" class="fas fa-times" data-bs-toggle="collapse" data-bs-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" title="close" aria-label="Toggle navigation"></a>
+                      </div>
+                  </div>
+              </div>
+              <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="componentsDropdown" aria-expanded="false" data-bs-toggle="dropdown">
+                            Tutoring Packages
+                            <span class="fas fa-angle-down nav-link-arrow ms-1"></span>
+                        </a>
+                        <div class="dropdown-menu p-0" aria-labelledby="componentsDropdown">
+                            <div class="row">
+                                <div class="col-12 ps-0 py-3">
+                                    <ul class="list-style-none">
+                                        <li><a class="dropdown-item" href="{% url 'weekly-tutoring' %}">Weekly Tutoring</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'group-tutoring' %}">Group Tutoring</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'single-tutoring' %}">Single Session Learning Boost </a></li>
+                                        <li><a class="dropdown-item" href="{% url 'university-admissions' %}">University Admission</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="notesDropdown" aria-expanded="false" data-bs-toggle="dropdown">
+                            Notes
+                            <span class="fas fa-angle-down nav-link-arrow ms-1"></span>
+                        </a>
+                        <div class="dropdown-menu p-0" aria-labelledby="notesDropdown">
+                            <div class="row">
+                                <div class="col-12 ps-0 py-3">
+                                    <ul class="list-style-none">
+                                        <li><a class="dropdown-item" href="{% url 'note1' %}">Note 1</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'contact-us' %}">Note 2</a></li>
+                                        <!-- Add more notes as needed... -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{% url 'apply' %}" class="nav-link">
+                            Apply Now
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="{% url 'contact-us' %}" class="nav-link">
+                            Contact Us
+                        </a>
+                    </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+</header>
