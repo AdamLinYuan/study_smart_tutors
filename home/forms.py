@@ -1,5 +1,5 @@
 from django import forms
-from .models import Application
+from .models import Application, Contact
 
 class ApplicationForm(forms.ModelForm):
 
@@ -20,3 +20,29 @@ class ApplicationForm(forms.ModelForm):
     class Meta:
         model = Application
         fields = ['tutoring_package', 'service_description', 'customer_name', 'customer_email', 'customer_phone']
+
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = ['name', 'email', 'message']
+        widgets = {
+            'name': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'e.g. Bonnie Green',
+                'id': 'name',
+                'required': True
+            }),
+            'email': forms.EmailInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'example@company.com',
+                'id': 'email',
+                'required': True
+            }),
+            'message': forms.Textarea(attrs={
+                'class': 'form-control',
+                'placeholder': 'Your message',
+                'id': 'message',
+                'rows': 4,
+                'required': True
+            }),
+        }

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.http import HttpResponse
-from .forms import ApplicationForm
+from .forms import ApplicationForm, ContactForm
 from django.core.mail import send_mail
 
 # Create your views here.
@@ -36,7 +36,23 @@ def about(request):
   return render(request, 'help/about.html')
 
 def contact(request):
-  return render(request, 'help/contact.html')
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your application has been submitted successfully.')
+            form_data = form.cleaned_data
+            message = '\n'.join(f'{key}: {value}' for key, value in form_data.items())
+            send_mail(
+                'New Application Submitted',  # subject
+                message,  # message
+                'sstapplicationforms@gmail.com',  # from email
+                ['adamyuanpersonal@gmail.com', 'adamtahri111@gmail.com'],  # to email
+            )
+            return redirect('contact-us')  # Redirect to a success page or another view
+    else:
+        form = ContactForm()
+    return render(request, 'help/contact.html', {'form': form})
 
 # Apply
 

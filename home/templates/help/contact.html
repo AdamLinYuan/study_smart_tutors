@@ -10,7 +10,7 @@
                 <div class="row justify-content-center">
                     <div class="col-12 col-xl-8 text-center">
                         <h1 class="display-2 mb-3">Get in touch today</h1>
-                        <p class="lead">Have a new project in mind? Drop us a line about your project needs, we answer same day.</p>        
+                        <p class="lead">Have a question about us in mind? Drop us a line about your tutoring needs, we answer same day.</p>        
                     </div>
                 </div>
             </div>
@@ -20,7 +20,7 @@
             <div class="container mt-n10">
                 <div class="row">
                     <div class="col-12">
-                        <iframe class="map rounded" id="gmap_canvas" src="https://maps.google.com/maps?q=san%20francisco&t=&z=8&ie=UTF8&iwloc=&output=embed"></iframe>
+                        <iframe class="map rounded" id="gmap_canvas" src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
                     </div>
                 </div>
             </div>
@@ -33,17 +33,18 @@
                         <!-- Contact Card -->
                         <div class="card border-0 p-2 p-md-3 p-lg-5">
                             <div class="card-header bg-white border-0 text-center">
-                                <h2>Want to work with us?</h2>
-                                <p>Cool! Let’s talk about your project</p>
+                                <h2>Have any Questions?</h2>
+                                <p>Cool! Ask away we are always happy to help!</p>
                             </div>
                             <div class="card-body px-0 pt-0">
-                                <form action="#">
+                                <form method="post" action="{% url 'contact-us' %}">
+                                    {% csrf_token %}
                                     <!-- Form -->
                                     <div class="mb-4">
                                         <label for="name">Your Name</label>
                                         <div class="input-group">
                                             <span class="input-group-text" id="basic-addon3"><span class="fas fa-user-circle"></span></span>
-                                            <input type="text" class="form-control" placeholder="e.g. Bonnie Green" id="name" required>
+                                            {{ form.name }}
                                         </div>
                                     </div>
                                     <!-- End of Form -->
@@ -52,17 +53,17 @@
                                         <label for="email">Your Email</label>
                                         <div class="input-group">
                                             <span class="input-group-text" id="basic-addon4"><span class="fas fa-envelope"></span></span>
-                                            <input type="email" class="form-control" placeholder="example@company.com" id="email" required>
+                                            {{ form.email }}
                                         </div>
                                     </div>
                                     <!-- End of Form -->
                                     <div class="mb-4">
                                         <label for="message">Your Message</label>
-                                        <textarea placeholder="Your message" class="form-control" id="message" rows="4" required></textarea>
+                                        {{ form.message }}
                                     </div>
                                     <!-- End of Form -->
                                     <div class="d-grid">
-                                        <button type="submit" class="btn rounded btn-secondary">Send message</button>
+                                        <button type="submit" class="btn rounded btn-secondary" style="background-color: #00aa55;">Send message</button>
                                     </div>
                                 </form>
                             </div>
