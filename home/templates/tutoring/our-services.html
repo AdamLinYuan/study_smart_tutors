@@ -1,0 +1,134 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    .introduction-section, .services-section {
+        background-color: #1b1b1b; /* or specify a color if needed */
+        background-image: none; /* or specify an image if needed */
+    }
+    .section-padding {
+    padding-left: 6rem; /* Adjust the value as needed */
+    padding-right: 6rem; /* Adjust the value as needed */
+    }
+</style>
+
+<section class="section-header overflow-hidden pt-7 pt-lg-8 pb-4 pb-lg-8 bg-primary text-white" >
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="fw-bolder display-4 gradient-text">Our Services</h1>
+                <br>
+                <br>
+                <p class="lead fw-normal text-muted mb-4">
+                    At TNT Tutoring, we offer a wide range of educational services designed to help students achieve their academic goals. Our experienced tutors provide personalized instruction in various subjects, ensuring that each student receives the support they need to succeed. Whether you need help with homework, test preparation, or mastering a new topic, our services are tailored to meet your individual needs.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="weekly-tutoring" class="services-section pt-0 pb-5 text-white section-padding">
+    <!-- Weekly Tutoring Section -->
+    <div class="row justify-content-between align-items-center mb-5 mb-lg-7">
+        <div class="col-12 col-lg-5 mb-5 mb-lg-0 order-lg-2">
+            <h2 class="h1">Weekly Tutoring<span class="badge-md ms-3 mb-0 fs-6 badge rounded-pill text-white bg-tertiary">Popular</span></h2>
+            <p class="mb-4 lead fw-bold">Weekly One on One Tutoring</p>
+            <p class="mb-4">Our weekly tutoring sessions offer consistent, ongoing support to help students stay on track with their studies.
+                With personalized lesson plans tailored to each student's learning style and pace, we ensure that they grasp
+                complex concepts and build a strong foundation in their subjects.</p>
+            <a href="{% url 'group-tutoring' %}" target="_blank" class="btn btn-outline-primary" style="background-color: #00aa55;">
+                <span class="fas fa-chart-line me-2"></span> Get Started
+            </a>
+        </div>
+        <div class="col-12 col-lg-6 order-lg-1">
+            <img src="{% static 'assets/img/illustrations/bs5-illustrations.svg' %}" alt="Front pages overview">
+        </div>
+    </div>
+</section>
+
+<section id="group-tutoring" class="services-section pt-0 pb-5 text-white section-padding">
+    <!-- Group Tutoring Section -->
+    <div class="row justify-content-between align-items-center mb-5 mb-lg-7">
+        <div class="col-lg-5 mb-5 mb-lg-0">
+            <h2 class="h1 d-flex align-items-center">Group Tutoring</h2>
+            <p class="mb-4 lead fw-bold">Weekly group tutoring sessions</p>
+            <p class="mb-4">We understand that consistent, long-term tutoring can be both beneficial and economical. That’s why we offer
+                bundled services at a discounted rate, providing you with the best value for your investment in your child's
+                education.
+                <br>
+                Benefits of Bundling: 
+                <br>
+                -Cost Savings
+                <br>
+                -Discounted Rates By opting for our bundled services, you can enjoy significant savings compared to booking
+                individual sessions. This makes high-quality tutoring more accessible and affordable.
+                <br>
+                - Flexible Payment Plans:We offer flexible payment plans for bundled services, allowing you to manage your
+                expenses more effectively.</p>
+            <a href="{% url 'weekly-tutoring' %}" target="_blank" class="btn btn-outline-primary" style="background-color: #00aa55;">
+                <span class="fas fa-chart-line me-2"></span> Get Started
+            </a>
+        </div>
+        <div class="col-lg-6">
+            <img src="{% static 'assets/img/sections-mockup.jpg' %}" alt="MapBox Leaflet.js Custom Integration Mockup">
+        </div>
+    </div>
+</section>
+
+<section id="single-session" class="services-section pt-0 pb-5 text-white section-padding">
+    <!-- Booster Section -->
+    <div class="row justify-content-between align-items-center">
+        <div class="col-12 col-lg-5 order-lg-2 mb-5 mb-lg-0">
+            <h2 class="h1 d-flex align-items-center">Booster Sessions</h2>
+            <p class="mb-4 lead fw-bold">One-off sessions for immediate assistance</p>
+            <p class="mb-4">Need help with a specific topic or preparing for an upcoming exam? Our one-off tutoring sessions provide
+                targeted assistance to address immediate academic challenges. Perfect for last-minute revision or tackling
+                difficult subjects, these sessions are designed to give students the boost they need.</p>
+            <a href="{% url 'single-tutoring' %}" target="_blank" class="btn btn-outline-primary" style="background-color: #00aa55;">
+                <span class="fas fa-chart-line me-2"></span> Get Started
+            </a>
+        </div>
+        <div class="col-12 col-lg-6 order-lg-1">
+            <img src="{% static 'assets/img/presentation-mockup-dashboard.png' %}" alt="Dashboard Preview">
+        </div>
+    </div>
+</section>
+
+<section id="university-admission" class="services-section pt-0 pb-5 text-white section-padding">
+    <!-- University Admissions Section -->
+    <div class="row justify-content-between align-items-center mb-5 mb-lg-7">
+        <div class="col-lg-5 mb-5 mb-lg-0">
+            <h2 class="h1 d-flex align-items-center">University Admissions</h2>
+            <p class="mb-4 lead fw-bold">Expert university admissions guidance provided</p>
+            <p class="mb-4">Navigating the university admissions process can be daunting. Our expert tutors offer comprehensive guidance
+                on everything from choosing the right courses to crafting compelling personal statements. We provide
+                personalized support to help you stand out in your applications and achieve your higher education goals.</p>
+            <a href="https://appseed.us/product/pixel-bootstrap-pro/django/" target="_blank" class="btn btn-outline-primary" style="background-color: #00aa55;">
+                <span class="fas fa-chart-line me-2"></span> Get Started
+            </a>
+        </div>
+        <div class="col-lg-6">
+            <img src="{% static 'assets/img/sections-mockup.jpg' %}" alt="MapBox Leaflet.js Custom Integration Mockup">
+        </div>
+    </div>
+</section>
+
+        <!-- University Admissions Section
+        <div class="row justify-content-between align-items-center mb-5 mb-lg-7">
+            <div class="col-12 col-lg-5 mb-5 mb-lg-0 order-lg-2">
+                <h2 class="h1">University Admissions</h2>
+                <p class="mb-4 lead fw-bold">Description</p>
+                <p class="mb-4">Navigating the university admissions process can be daunting. Our expert tutors offer comprehensive guidance
+                    on everything from choosing the right courses to crafting compelling personal statements. We provide
+                    personalized support to help you stand out in your applications and achieve your higher education goals.</p>
+                <a href="{% url 'group-tutoring' %}" target="_blank" class="btn btn-outline-primary" style="background-color: #00aa55;">
+                    <span class="fas fa-book me-2"></span> Get Started
+                </a>
+            </div>
+            <div class="col-12 col-lg-6 order-lg-1">
+                <img src="{% static 'assets/img/illustrations/bs5-illustrations.svg' %}" alt="Front pages overview">
+            </div>
+        </div> -->
+
+{% endblock %}

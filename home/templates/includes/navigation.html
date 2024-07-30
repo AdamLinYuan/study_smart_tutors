@@ -3,14 +3,14 @@
 <header class="header-global">
 
     {% if request.path == "/landing-freelancer/" or request.path == "/blank/" %}
-    <nav id="navbar-main" aria-label="Primary navigation" class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-light navbar-theme-secondary">
+    <nav id="navbar-main" aria-label="Primary navigation" class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-light navbar-theme-secondary" style="background-color: #000000;">
     {% else %}
-    <nav id="navbar-main" aria-label="Primary navigation" class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-dark navbar-theme-secondary">
+    <nav id="navbar-main" aria-label="Primary navigation" class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-dark navbar-theme-secondary" style="background-color: #000000;">
     {% endif %}  
       <div class="container position-relative">
           <a class="navbar-brand me-lg-5" href="/">
-              <img class="navbar-brand-dark" src="{% static 'assets/img/favicon/android-chrome-192x192.png' %}" alt="Logo light">
-              <img class="navbar-brand-light" src="{% static 'assets/img/favicon/android-chrome-192x192.png' %}" alt="Logo dark">
+            <img class="navbar-brand-dark" src="{% static 'assets/img/favicon/android-chrome-192x192.png' %}" alt="Logo light">
+            <img class="navbar-brand-light" src="{% static 'assets/img/favicon/android-chrome-192x192.png' %}" alt="Logo dark">
           </a>
 
             <!-- Add the navbar-toggler button here -->
@@ -41,17 +41,17 @@
                             <div class="row">
                                 <div class="col-12 ps-0 py-3">
                                     <ul class="list-style-none">
-                                        <li><a class="dropdown-item" href="{% url 'weekly-tutoring' %}">Weekly Tutoring</a></li>
-                                        <li><a class="dropdown-item" href="{% url 'group-tutoring' %}">Group Tutoring</a></li>
-                                        <li><a class="dropdown-item" href="{% url 'single-tutoring' %}">Single Session Learning Boost </a></li>
-                                        <li><a class="dropdown-item" href="{% url 'university-admissions' %}">University Admission</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'our-services' %}#weekly-tutoring">Weekly Tutoring</a></li>
+                            <li><a class="dropdown-item" href="{% url 'our-services' %}#group-tutoring">Group Tutoring</a></li>
+                            <li><a class="dropdown-item" href="{% url 'our-services' %}#single-session">Single Session Learning Boost</a></li>
+                            <li><a class="dropdown-item" href="{% url 'our-services' %}#university-admission">University Admission</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </li>
                 
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" id="notesDropdown" aria-expanded="false" data-bs-toggle="dropdown">
                             Notes
                             <span class="fas fa-angle-down nav-link-arrow ms-1"></span>
@@ -62,12 +62,11 @@
                                     <ul class="list-style-none">
                                         <li><a class="dropdown-item" href="{% url 'note1' %}">Note 1</a></li>
                                         <li><a class="dropdown-item" href="{% url 'contact-us' %}">Note 2</a></li>
-                                        <!-- Add more notes as needed... -->
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                    </li>
+                    </li> -->
 
                     <li class="nav-item">
                         <a href="{% url 'apply' %}" class="nav-link">

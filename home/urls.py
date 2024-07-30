@@ -6,6 +6,7 @@ urlpatterns = [
     path('', views.index, name='index'),
 
     # Tutoring Packages
+    path('our-services/', views.our_services, name='our-services'),
     path('weekly-tutoring/', views.weekly_tutoring, name='weekly-tutoring'),
     path('group-tutoring/', views.group_tutoring, name='group-tutoring'),
     path('single-tutoring/', views.single_tutoring, name='single-tutoring'),
@@ -20,4 +21,7 @@ urlpatterns = [
 
     # Apply
     path('apply/', views.apply, name='apply'),
+
+    # Easter Egg
+    path('beaubeau/', views.beaubeau, name='beaubeau'),
 ]

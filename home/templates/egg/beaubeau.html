@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="centered-content">
+        <h1 id="title">Countdown to My beaubeau's Arrival</h1>
+        <div id="countdown">
+            <div class="time-section">
+                <span id="days"></span>
+                <p>Days</p>
+            </div>
+            <div class="time-section">
+                <span id="hours"></span>
+                <p>Hours</p>
+            </div>
+            <div class="time-section">
+                <span id="minutes"></span>
+                <p>Minutes</p>
+            </div>
+            <div class="time-section">
+                <span id="seconds"></span>
+                <p>Seconds</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.min.js"></script>
+    <script>
+        // Set the date we're counting down to
+        const countDownDate = new Date("Sep 1, 2024 20:30:00 GMT+0100").getTime();
+
+        // Update the count down every 1 second
+        const countdownFunction = setInterval(function() {
+            // Get today's date and time
+            const now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            const distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the respective elements
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+            // If the count down is over, write some text and trigger confetti
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("title").innerHTML = "BEAUBEAU'S HERE!<br>(she will be hugged and kissed very hard)";
+                document.getElementById("countdown").innerHTML = "<img id='arrival-image' src='{% static 'images/arrival.jpg' %}' alt='Arrival Image'>";
+                
+                // Trigger confetti animation
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { y: 0.6 }
+                });
+            }
+        }, 1000);
+    </script>
+    <style>
+        .centered-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100vh; /* Full viewport height */
+        }
+        .centered-image {
+            width: 50%; /* Adjust the width as needed */
+            margin-top: 20px; /* Space between text and image */
+        }
+        .arrival-text {
+            font-size: 3em; /* Adjust the size as needed */
+            font-weight: bold;
+        }
+        #arrival-image {
+            width: 25%; /* Adjust the width as needed */
+            margin-top: 20px; /* Space between text and image */
+        }
+    </style>
+</body>
+</html>

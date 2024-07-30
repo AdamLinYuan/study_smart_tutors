@@ -13,6 +13,9 @@ def index(request):
 
 # Tutoring Packages
 
+def our_services(request):
+  return render(request, 'tutoring/our-services.html')
+
 def weekly_tutoring(request):
   return render(request, 'tutoring/weekly-tutoring.html')
 
@@ -75,5 +78,9 @@ def apply(request):
         form = ApplicationForm()
     return render(request, 'apply/apply.html', {'form': form})
 
+# Easter Egg
+
+def beaubeau(request):
+   return render(request, 'egg/beaubeau.html')
 
 

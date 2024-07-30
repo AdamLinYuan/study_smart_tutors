@@ -1,2 +1,20 @@
 .bg-primary {
     background-color: #3b3b3b !important; }
+
+.gradient-text {
+    font-weight: bold;
+    background-image: linear-gradient(
+        to right,
+        #462523 0,
+        #cb9b51 22%, 
+        #f6e27a 45%,
+        #f6f2c0 50%,
+        #f6e27a 55%,
+        #cb9b51 78%,
+        #462523 100%
+    );
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
